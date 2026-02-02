@@ -227,7 +227,7 @@
             /* Row 4: Bottom alpha + inner keys (6 left, 6 inner, 6 right = 18 keys) */
             &kp LSHFT           &kp Z        &kp X        &kp C        &kp V        &kp B      &kp C_MUTE   &kp F20      &mo LAYER_FN  &mo LAYER_FN  &kp C_VOL_UP  &kp C_VOL_DN   &kp N      &kp M        &kp COMMA    &kp DOT      &kp FSLH        &rect_max
             /* Row 5: Thumb cluster (5 left outer, 3 inner left, 3 inner right, 5 right outer = 16 keys) */
-            &kp LCTRL           &kp LALT     &kp LGUI     &mkp LCLK    &mkp RCLK              &lt LAYER_NAV SPACE &lt LAYER_PWR RET &kp PERIOD    &lt LAYER_SYMB QUESTION  &bspc_word LA(BSPC) BSPC &lt LAYER_NAV SPACE     &arrow_left LC(LEFT) LEFT  &kp UP   &kp DOWN  &arrow_right LC(RIGHT) RIGHT  &hyper_key
+            &kp LCTRL           &kp LALT     &kp LGUI     &mkp LCLK    &mkp RCLK              &lt LAYER_NAV SPACE &lt LAYER_PWR RET &kp QUESTION    &lt LAYER_SYMB PERIOD  &bspc_word LA(BSPC) BSPC &lt LAYER_NAV SPACE     &arrow_left LC(LEFT) LEFT  &kp UP   &kp DOWN  &arrow_right LC(RIGHT) RIGHT  &hyper_key
             >;
         };
 
