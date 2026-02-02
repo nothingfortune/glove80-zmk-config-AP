@@ -29,23 +29,23 @@
 /* Meh key: Ctrl+Alt+Shift (no Cmd) */
 #define MEH LC(LS(LALT))
 
-/* Increase mouse cursor speed 3x (default is 600) */
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1800
-/* Double scroll wheel speed (default is 10) */
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
+/* Mouse cursor speed - 5x default (default is 600) */
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 3000
+/* Scroll wheel speed - 4x default (default is 10) */
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 40
 
-/* Mouse cursor acceleration: starts slow, smoothly ramps to max speed over 500ms */
+/* Mouse cursor settings - high speed, no acceleration ramp */
 &mmv {
     delay-ms = <0>;
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <2>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <1>;
 };
 
-/* Scroll wheel acceleration: matches cursor behavior */
+/* Scroll wheel settings - instant max speed */
 &msc {
     delay-ms = <0>;
-    time-to-max-speed-ms = <300>;
-    acceleration-exponent = <2>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <1>;
 };
 
 / {
@@ -200,6 +200,13 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LA(DOWN))>;
         };
+
+        /* Hyper key macro - ⌘⌃⌥⇧ for Raycast/Alfred */
+        hyper_key: hyper_key_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LGUI>, <&sk LALT>, <&sk LCTRL>, <&sk LSHFT>;
+        };
     };
 
     keymap {
@@ -212,15 +219,15 @@
             /* Row 0: Function row - Brightness, Mission Control, DND | Media, Volume, Mic Mute */
             &kp C_BRI_DN        &kp C_BRI_UP &kp LC(UP)   &kp F6       &kp C_PP                                                                                                    &kp C_PREV   &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP    &kp F20
             /* Row 1: Number row | Screenshot (hold: to clipboard) */
-            &gresc              &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                                                                              &kp N6     &kp N7       &kp N8       &kp N9       &kp N0          &screenshot
+            &kp ESC             &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                                                                              &kp N6     &kp N7       &kp N8       &kp N9       &kp N0          &screenshot
             /* Row 2: Top alpha row | Rectangle Left Half */
             &kp TAB             &kp Q        &kp W        &kp E        &kp R        &kp T                                                                               &kp Y      &kp U        &kp I        &kp O        &kp P           &rect_left
             /* Row 3: Home row with mods (GACS layout) | Rectangle Right Half */
-            &mt LCTRL CAPSLOCK       &hm LGUI A   &hm LALT S   &hm LCTRL D  &hms LSHFT F &kp G                                                                               &kp H      &hms RSHFT J &hm RCTRL K  &hm RALT L   &hm RGUI SEMI   &rect_right
+            &mt LCTRL ESC       &hm LGUI A   &hm LALT S   &hm LCTRL D  &hms LSHFT F &kp G                                                                               &kp H      &hms RSHFT J &hm RCTRL K  &hm RALT L   &hm RGUI SEMI   &rect_right
             /* Row 4: Bottom alpha row | Rectangle Maximize */
             &kp LSHFT           &kp Z        &kp X        &kp C        &kp V        &kp B      &kp C_MUTE   &kp F20      &mo LAYER_FN  &mo LAYER_FN  &kp C_VOL_UP  &kp C_VOL_DN   &kp N      &kp M        &kp COMMA    &kp DOT      &kp FSLH        &rect_max
             /* Row 5: Thumb cluster | Hyper key */
-            &magic LAYER_MAGIC 0 &kp LCTRL  &kp LALT     &kp LGUI     &mkp LCLK              &lt LAYER_NAV SPACE &lt LAYER_PWR RET &kp DEL  &kp HOME  &bspc_word LA(BSPC) BSPC &lt LAYER_NAV SPACE     &arrow_left LC(LEFT) LEFT  &kp UP   &kp DOWN  &arrow_right LC(RIGHT) RIGHT  &kp HYPER
+            &magic LAYER_MAGIC 0 &kp LCTRL  &kp LALT     &kp LGUI     &mkp LCLK              &lt LAYER_NAV SPACE &lt LAYER_PWR RET &kp DEL  &kp HOME  &bspc_word LA(BSPC) BSPC &lt LAYER_NAV SPACE     &arrow_left LC(LEFT) LEFT  &kp UP   &kp DOWN  &arrow_right LC(RIGHT) RIGHT  &hyper_key
             >;
         };
 
