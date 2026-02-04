@@ -28,19 +28,19 @@ This configuration features a QWERTY layout with **Home Row Mods** using the **G
 | 🔅 Brightness Down | ⏮ Previous Track |
 | 🔆 Brightness Up | ⏭ Next Track |
 | 🪟 Mission Control | 🔉 Volume Down |
-| F6 | 🔊 Volume Up |
-| ⏯ Play/Pause | 🎤 **Mic Mute (F20)** |
+| 🔒 **Lock Screen** | 🔊 Volume Up |
+| ✨ Magic Layer | `[]` Auto-pair |
 
-> **Mic Mute Setup**: Map F20 to mic toggle in Google Meet/Teams settings
+> **Lock Screen**: ⌃⌘Q - instantly locks macOS
 
-#### 🪟 Right Column (Rectangle + Productivity)
+#### 🪟 Right Column (Auto-pair Brackets)
 | Position | Function |
 |----------|----------|
-| Top | 🎤 Mic Mute (F20) |
-| Row 1 | 📸 Screenshot (⌘⇧4) |
-| Row 2 | ◀️ Rectangle Left Half |
-| Row 3 | ▶️ Rectangle Right Half |
-| Row 4 | ⬜ Rectangle Maximize |
+| Top | `[]` Auto-pair brackets |
+| Row 1 | `{}` Auto-pair braces |
+| Row 2 | `()` Auto-pair parens |
+| Row 3 | Enter/' (hold/tap) |
+| Row 4 | `<>` Auto-pair angles |
 | Bottom | ⚡ Hyper Key (⌘⌃⌥⇧) |
 
 #### 🏠 Home Row Mods (GACS Layout)
@@ -59,17 +59,18 @@ This configuration features a QWERTY layout with **Home Row Mods** using the **G
 - **Backspace** → Hold: Delete Word (⌥+⌫) | Tap: Backspace
 - **Left Arrow** → Hold: Word Left (⌃+←) | Tap: Left
 - **Right Arrow** → Hold: Word Right (⌃+→) | Tap: Right
-- **Escape** → Hold: Left Ctrl | Tap: Escape
-- **Grave/Escape** → Escape normally, Grave with Shift
-- **Hyper Key** → ⌘⌃⌥⇧ for Raycast/Alfred shortcuts
+- **Grave/Escape** → Escape normally, Grave with Shift/⌘
+- **G/H keys** → Hold: Symbol Layer | Tap: G/H
+- **Hyper Key** → ⌘⌃⌥⇧ sticky mods for Raycast/Alfred
+- **Lock Screen** → ⌃⌘Q in function row
 
-#### 🖱️ Mouse Keys (with Acceleration)
+#### 🖱️ Mouse Keys (Pointing)
 | Setting | Value | Description |
-|---------|-------|-------------|
-| Cursor Speed | 1800 | 3x default |
-| Scroll Speed | 20 | 2x default |
-| Cursor Accel | 500ms ramp | Quadratic curve |
-| Scroll Accel | 300ms ramp | Quadratic curve |
+|---------|-------|--------------|
+| Cursor Speed | 1500 | 2.5x default (600) |
+| Scroll Speed | 20 | 2x default (10) |
+| Time to Max | 0ms | Instant max speed |
+| Acceleration | Linear | No ramp-up curve |
 
 #### ⌨️ Symbol Layer (sliceMK Layout)
 ```
@@ -116,7 +117,7 @@ Edit `config/glove80.conf` to customize:
 
 | Setting | Description |
 |---------|-------------|
-| `CONFIG_ZMK_MOUSE=y` | Enable mouse key support |
+| `CONFIG_ZMK_POINTING=y` | Enable mouse/pointing support |
 | `CONFIG_ZMK_SLEEP=y` | Enable deep sleep mode |
 | `CONFIG_ZMK_IDLE_SLEEP_TIMEOUT` | Sleep timeout in ms |
 | `CONFIG_BT_CTLR_TX_PWR_PLUS_8=y` | Max Bluetooth power |
