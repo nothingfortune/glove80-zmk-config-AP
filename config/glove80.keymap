@@ -313,7 +313,7 @@
             /* Row 4: Bottom alpha + inner keys */
             &magic LAYER_MAGIC 0 &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &comma_angle &kp DOT &kp FSLH &numpad_td
             /* Row 5: Thumb cluster */
-            &kp LCTRL &kp LALT &kp LGUI &arrow_left LC(LEFT) LEFT &upDownArrows &arrow_right LC(RIGHT) RIGHT &space_v3_TKZ LAYER_NAV SPACE &lt_v2_TKZ LAYER_NUM RET &lt_v2_TKZ LAYER_SYMB QMARK &lt_v2_TKZ LAYER_SYMB PERIOD &bspc_word LA(BSPC) BSPC &space_v3_TKZ LAYER_NAV SPACE
+            &kp LCTRL &kp LALT &kp LGUI &arrow_left &kp LEFT &upDownArrows &arrow_right &kp RIGHT &space_v3_TKZ &mo LAYER_NAV &kp SPACE &lt_v2_TKZ &mo LAYER_NUM &kp RET &lt_v2_TKZ &mo LAYER_SYMB &kp QMARK &lt_v2_TKZ &mo LAYER_SYMB &kp PERIOD &bspc_word &kp BSPC &space_v3_TKZ &mo LAYER_NAV &kp SPACE
             >;
         }
         };
